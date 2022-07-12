@@ -12,14 +12,15 @@ const counterSlice = createSlice({
     incrementCounter(state, action) {
       state.counter = state.counter + 1;
     },
-    decrementCounter(state, action){
+    decrementCounter(state, action) {
       state.counter = state.counter - 1;
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(incrementAsync.fulfilled, (state, action) => {
-      state.counter = state.counter + action.payload;
-    })
+    builder
+      .addCase(incrementAsync.fulfilled, (state, action) => {
+        state.counter = state.counter + action.payload;
+      })
   }
 });
 
